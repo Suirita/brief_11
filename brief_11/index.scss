@@ -1,0 +1,121 @@
+@import 'variables';
+
+@function font($size){
+    @return map-get( $fonts, $size);
+}
+
+body{
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+#login{
+    width: 60%;
+    float: left;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        font-size: font(big);
+        position: relative;
+        right: 20%;
+    }
+}
+
+#button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    #button{
+        background-color: $login ;
+        font-size: font(small);
+        border-radius: 10px;
+        padding: 0;
+        width: 40%;
+    }
+}
+
+#signup-link{
+    width: 40%;
+    background-color: $login;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        font-size: font(big);
+        text-align: center;
+        z-index: 1;
+    }
+
+    p{
+        font-size: font(medium);
+        text-align: center;
+        z-index: 1;
+    }
+
+    button{
+        background-color: $signup;
+        font-size: font(small);
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 0;
+        width: 30%;
+        z-index: 1;
+    }
+    
+    .blob {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $signup;
+        animation: change 20s linear infinite;
+        z-index: 0;
+    }
+}
+
+@keyframes change {
+    0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        translate: 100px;
+    }
+
+    20% {
+        border-radius: 60% 40% 40% 60% / 60% 25% 75% 40%;
+        translate: 0px 150px;
+    }
+
+    40% {
+        border-radius: 70% 30% 65% 35% / 80% 45% 55% 20%;
+        translate: -50px 0px;
+    }
+
+    60% {
+        border-radius: 30% 70% 70% 30% / 20% 30% 70% 80%;
+        translate: -100px -150px;
+    }
+
+    80% {
+        border-radius: 40% 60% 40% 60% / 70% 55% 45% 30%;
+        translate: 0px -100px;
+    }
+
+    100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        translate: 100px;
+    }
+}

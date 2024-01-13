@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#back-btn {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}/*# sourceMappingURL=admin.css.map */
